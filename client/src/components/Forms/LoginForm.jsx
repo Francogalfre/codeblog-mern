@@ -1,16 +1,15 @@
 import React from "react"
 
 // Hooks
-import useRegister from "../hooks/useRegister"
+import useLogin from "../../hooks/useLogin"
 
-const RegisterForm = () => {
-	const { handleRegister, setPassword, setUsername, username, password } = useRegister()
+const LoginForm = () => {
+	const { handleLogin, setUsername, setPassword, username, password } = useLogin()
 
 	return (
 		<form
 			className='flex flex-col bg-[#161b22] rounded-lg content-start text-start items-start p-12 mt-12 gap-5'
-			onSubmit={handleRegister}
-			action='#'
+			onSubmit={handleLogin}
 		>
 			<label
 				className='font-normal text-lg w-full text-[#ecf2f8] text-start'
@@ -19,11 +18,11 @@ const RegisterForm = () => {
 				Username
 			</label>
 			<input
-				className='flex items-center h-12 px-4 w-full bg-[#21262d] text-[#ecf2f8] rounded focus:outline-none focus:ring-2'
+				className='flex items-center h-12 px-4 bg-[#21262d] text-[#ecf2f8]  rounded focus:outline-none focus:ring-2 w-full'
 				type='text'
-				value={username}
-				onChange={(e) => setUsername(e.target.value)}
 				placeholder='francogalfre...'
+				value={username}
+				onChange={(evt) => setUsername(evt.target.value)}
 				required
 			/>
 			<label
@@ -33,22 +32,21 @@ const RegisterForm = () => {
 				Password
 			</label>
 			<input
-				className='flex items-center h-12 px-4 w-full bg-[#21262d] text-[#ecf2f8] rounded focus:outline-none focus:ring-2'
+				className='flex items-center h-12 px-4 bg-[#21262d] text-[#ecf2f8] rounded focus:outline-none focus:ring-2 w-full'
 				type='password'
-				onChange={(e) => setPassword(e.target.value)}
-				value={password}
 				placeholder='.....'
+				value={password}
+				onChange={(evt) => setPassword(evt.target.value)}
 				required
 			/>
 			<button
 				to='/register'
-				type='submit'
 				className='text-[#ecf2f8] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 transition-all duration-200'
 			>
-				Register
+				Login
 			</button>
 		</form>
 	)
 }
 
-export default RegisterForm
+export default LoginForm

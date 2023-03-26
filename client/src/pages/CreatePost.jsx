@@ -1,5 +1,5 @@
 // Components
-import CreatePostForm from "../components/CreatePostForm"
+import CreatePostForm from "../components/Forms/CreatePostForm"
 
 const CreatePostPage = () => {
 	return (

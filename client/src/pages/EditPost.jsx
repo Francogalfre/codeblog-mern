@@ -1,5 +1,5 @@
 // Components
-import EditPostForm from "../components/EditPostForm"
+import EditPostForm from "../components/Forms/EditPostForm"
 
 const EditPostPage = () => {
 	return (
