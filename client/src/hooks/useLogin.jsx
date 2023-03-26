@@ -1,5 +1,7 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
+// Notification
 import { errorToast, succesfullyToast } from "../utils/ToastNotification"
 
 // Context
@@ -9,8 +11,8 @@ import UserContext from "../context/UserContext"
 const useLogin = () => {
 	const [username, setUsername] = useState("")
 	const [password, setPassword] = useState("")
-	const [redirect, setRedirect] = useState(false)
 
+	const navigate = useNavigate()
 	const { setUserInfo } = useContext(UserContext)
 
 	// Function
@@ -29,7 +31,7 @@ const useLogin = () => {
 				setUserInfo(userInfo)
 
 				succesfullyToast("Succesfully Login")
-				setRedirect(true)
+				navigate("/")
 			})
 		} else if (response.status === 400) {
 			errorToast("Failed Login")
@@ -38,7 +40,7 @@ const useLogin = () => {
 		}
 	}
 
-	return { handleLogin, setUsername, setPassword, redirect, username, password }
+	return { handleLogin, setUsername, setPassword, username, password }
 }
 
 export default useLogin

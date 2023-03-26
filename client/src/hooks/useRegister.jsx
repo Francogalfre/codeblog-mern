@@ -1,10 +1,14 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
+// Notification
 import { errorToast, succesfullyToast } from "../utils/ToastNotification"
 
 const useRegister = () => {
 	const [username, setUsername] = useState("")
 	const [password, setPassword] = useState("")
+
+	const navigate = useNavigate()
 
 	// Function
 	const handleRegister = async (e) => {
@@ -18,6 +22,7 @@ const useRegister = () => {
 
 		if (response.status === 200) {
 			succesfullyToast("Succesfully Registered")
+			navigate("/login")
 		} else if (response.status === 400) {
 			errorToast("Failed Register")
 		} else {

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 // Notification
 import { errorToast, succesfullyToast } from "../utils/ToastNotification"
@@ -8,7 +9,8 @@ const useCreatePost = () => {
 	const [summary, setSummary] = useState("")
 	const [content, setContent] = useState("")
 	const [files, setFiles] = useState("")
-	const [redirect, setRedirect] = useState(false)
+
+	const navigate = useNavigate()
 
 	const handleNewPost = async (evt) => {
 		evt.preventDefault()
@@ -25,12 +27,12 @@ const useCreatePost = () => {
 			credentials: "include",
 		})
 
-		setRedirect(true)
-
 		if (response.status === 200) {
 			response.json().then(() => {
 				succesfullyToast("Succesfully Created Post")
 			})
+
+			navigate("/")
 		} else if (response.status === 400) {
 			errorToast("Failed to create the the Post")
 		} else {
@@ -39,7 +41,6 @@ const useCreatePost = () => {
 	}
 
 	return {
-		redirect,
 		title,
 		summary,
 		content,

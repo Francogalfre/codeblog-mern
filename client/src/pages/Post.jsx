@@ -1,53 +1,16 @@
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-
-import { Navigate } from "react-router-dom"
-
+// Date Format
 import { format } from "date-fns"
 import { Link } from "react-router-dom"
-
-// Notification
-import { succesfullyToast, errorToast } from "../utils/ToastNotification"
 
 // Icons
 import Edit from "../assets/icons/Edit"
 import Delete from "../assets/icons/Delete"
 
-// Context
-import { useContext } from "react"
-import UserContext from "../context/UserContext"
+// Hooks
+import useGetPost from "../hooks/useGetPost"
 
 const PostPage = () => {
-	const [postInfo, setPostInfo] = useState(null)
-	const [redirect, setRedirect] = useState(false)
-	const { userInfo } = useContext(UserContext)
-
-	const { id } = useParams()
-
-	useEffect(() => {
-		fetch(`http://localhost:4000/post/${id}`)
-			.then((res) => res.json())
-			.then((data) => setPostInfo(data.PostData))
-	}, [])
-
-	const handleDelete = async () => {
-		const response = await fetch(`http://localhost:4000/post/${id}`, { method: "DELETE" })
-
-		if (response.status === 200) {
-			response.json().then(() => {
-				succesfullyToast("Succesfully Post Deleted")
-				setRedirect(true)
-			})
-		} else if (response.status === 400) {
-			errorToast("Failed Post Delete")
-		} else {
-			console.log({ error: "Fetch Error" })
-		}
-	}
-
-	if (redirect) {
-		return <Navigate to={"/"} />
-	}
+	const { handleDelete, userInfo, postInfo } = useGetPost()
 
 	if (!postInfo) return ""
 

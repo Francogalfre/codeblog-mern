@@ -1,5 +1,5 @@
 // Icon
-import Plus from "../assets/icons/Plus"
+import Edit from "../assets/icons/Edit"
 
 // ReactQuill Config
 import ReactQuill from "react-quill"
@@ -7,9 +7,9 @@ import "../utils/ReactQuill.css"
 import { modules, formats } from "../utils/ReactQuill"
 
 // Hooks
-import useCreatePost from "../hooks/useCreatePost"
+import useEditPost from "../hooks/useEditPost"
 
-const CreatePostForm = () => {
+const EditPostForm = () => {
 	const {
 		title,
 		summary,
@@ -18,13 +18,13 @@ const CreatePostForm = () => {
 		setSummary,
 		setContent,
 		setFiles,
-		handleNewPost,
-	} = useCreatePost()
+		handleEditPost,
+	} = useEditPost()
 
 	return (
 		<form
 			className='flex flex-col bg-[#161b22] rounded-lg content-center text-start items-start px-12 py-10 gap-6'
-			onSubmit={handleNewPost}
+			onSubmit={handleEditPost}
 		>
 			<h1 className='text-[#ecf2f8] text-2xl pb-4'>Create your Post</h1>
 
@@ -84,10 +84,10 @@ const CreatePostForm = () => {
 
 			<button className='text-[#ecf2f8] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 transition-all duration-200 flex items-center gap-2'>
 				Create Post
-				<Plus />
+				<Edit />
 			</button>
 		</form>
 	)
 }
 
-export default CreatePostForm
+export default EditPostForm
