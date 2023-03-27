@@ -1,10 +1,22 @@
 import express from "express"
+import jwt from "jsonwebtoken"
 
 const router = express.Router()
 
 // Models
 import { UserModel } from "../models/User.js"
 import { PostModel } from "../models/Post.js"
+
+router.get("/", (req, res) => {
+	const { token } = req.cookies
+
+	if (token) {
+		jwt.verify(token, process.env.SECRET, {}, (err, info) => {
+			if (err) throw err
+			res.json(info)
+		})
+	}
+})
 
 router.get("/:username", async (req, res) => {
 	const { username } = req.params
@@ -15,6 +27,7 @@ router.get("/:username", async (req, res) => {
 			stringUsername.charAt(0).toUpperCase() + stringUsername.slice(1)
 
 		const user = await UserModel.findOne({ username: capitalizedUsername })
+
 		const { _id } = user
 
 		const posts = await PostModel.find({ author: _id })

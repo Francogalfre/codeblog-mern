@@ -11,9 +11,6 @@ const uploadMiddleware = multer({ dest: "src/uploads" })
 
 const router = express.Router()
 
-// Secret String
-const secret = "jgsajgsajgqmgsakga123sga"
-
 router.post("/", uploadMiddleware.single("file"), async (req, res) => {
 	const { originalname, path } = req.file
 	const { token } = req.cookies
@@ -24,7 +21,7 @@ router.post("/", uploadMiddleware.single("file"), async (req, res) => {
 
 	fs.renameSync(path, newPath)
 
-	jwt.verify(token, secret, {}, async (err, info) => {
+	jwt.verify(token, process.env.SECRET, {}, async (err, info) => {
 		if (err) throw err
 
 		const { title, summary, content } = req.body
@@ -89,7 +86,7 @@ router.put("/edit/:id", uploadMiddleware.single("file"), (req, res) => {
 		fs.renameSync(path, newPath)
 	}
 
-	jwt.verify(token, secret, {}, async (err, info) => {
+	jwt.verify(token, process.env.SECRET, {}, async (err, info) => {
 		if (err) throw err
 
 		const { id, title, summary, content } = req.body

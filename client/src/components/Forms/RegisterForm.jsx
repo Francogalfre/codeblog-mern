@@ -8,18 +8,18 @@ const RegisterForm = () => {
 
 	return (
 		<form
-			className='flex flex-col bg-[#161b22] rounded-lg content-start text-start items-start p-12 mt-12 gap-5'
+			className='flex flex-col bg-second-background-color rounded-lg content-start text-start items-start p-12 mt-12 gap-5'
 			onSubmit={handleRegister}
 			action='#'
 		>
 			<label
-				className='font-normal text-lg w-full text-[#ecf2f8] text-start'
+				className='font-normal text-lg w-full text-main-text text-start'
 				htmlFor='username'
 			>
 				Username
 			</label>
 			<input
-				className='flex items-center h-12 px-4 w-full bg-[#21262d] text-[#ecf2f8] rounded focus:outline-none focus:ring-2'
+				className='flex items-center h-12 px-4 w-full bg-input-background-color text-main-text rounded focus:outline-none focus:ring-2'
 				type='text'
 				value={username}
 				onChange={(e) => setUsername(e.target.value)}
@@ -27,13 +27,13 @@ const RegisterForm = () => {
 				required
 			/>
 			<label
-				className='font-normal text-lg w-full text-[#ecf2f8] text-start'
+				className='font-normal text-lg w-full text-main-text text-start'
 				htmlFor='username'
 			>
 				Password
 			</label>
 			<input
-				className='flex items-center h-12 px-4 w-full bg-[#21262d] text-[#ecf2f8] rounded focus:outline-none focus:ring-2'
+				className='flex items-center h-12 px-4 w-full bg-input-background-color text-main-text rounded focus:outline-none focus:ring-2'
 				type='password'
 				onChange={(e) => setPassword(e.target.value)}
 				value={password}

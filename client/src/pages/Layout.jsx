@@ -12,8 +12,8 @@ import { UserContextProvider } from "../context/UserContext"
 const Layout = () => {
 	return (
 		<UserContextProvider>
-			<section className='w-full bg-[#0d1117] h-full'>
-				<section className='max-w-[900px] mx-auto p-10 font-poppins bg-[#0d1117]'>
+			<section className='w-full bg-background-color h-full'>
+				<section className='max-w-[900px] mx-auto p-10 font-poppins bg-background-color'>
 					<Header />
 					<Toaster containerStyle={{ marginTop: 30 }} />
 

@@ -12,6 +12,8 @@ const useRegister = () => {
 
 	const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1)
 
+	console.log(username.length)
+
 	// Function
 	const handleRegister = async (e) => {
 		e.preventDefault()

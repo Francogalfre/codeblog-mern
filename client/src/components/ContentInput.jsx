@@ -9,7 +9,7 @@ const ContentInput = ({ onChange, value }) => {
 			theme='snow'
 			modules={modules}
 			formats={formats}
-			className='text-[#ecf2f8] pb-3 border-0 w-full'
+			className='text-main-text pb-3 border-0 w-full'
 			value={value}
 			onChange={onChange}
 		/>
