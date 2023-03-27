@@ -37,6 +37,7 @@ const EditPostForm = () => {
 					placeholder='"My First post Title..."'
 					value={title}
 					onChange={(evt) => setTitle(evt.target.value)}
+					required
 				/>
 			</div>
 
@@ -51,6 +52,7 @@ const EditPostForm = () => {
 					placeholder='This post is about...'
 					value={summary}
 					onChange={(evt) => setSummary(evt.target.value)}
+					required
 				/>
 			</div>
 
@@ -63,6 +65,7 @@ const EditPostForm = () => {
 					name='postImage'
 					onChange={(evt) => setFiles(evt.target.files)}
 					className='file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-blue-700 file:text-[#ecf2f8] file:cursor-pointer file:pr-3 file:hover:bg-blue-800 file:transition-colors file:duration-200 block w-full text-sm text-[#89929b] px-4 py-3 rounded-lg cursor-pointer bg-[#21262d] focus:outline-none '
+					required
 				/>
 			</div>
 

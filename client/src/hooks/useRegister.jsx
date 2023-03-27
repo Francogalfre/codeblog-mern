@@ -10,22 +10,23 @@ const useRegister = () => {
 
 	const navigate = useNavigate()
 
+	const capitalizedUsername = username.charAt(0).toUpperCase() + username.slice(1)
+
 	// Function
 	const handleRegister = async (e) => {
 		e.preventDefault()
 
 		const response = await fetch("http://localhost:4000/register", {
 			method: "POST",
-			body: JSON.stringify({ username, password }),
+			body: JSON.stringify({ username: capitalizedUsername, password }),
 			headers: { "Content-Type": "application/json" },
 		})
 
 		if (response.status === 200) {
 			succesfullyToast("Succesfully Registered")
 			navigate("/login")
-		} else if (response.status === 400) {
-			errorToast("Failed Register")
 		} else {
+			errorToast("Fetch error")
 			console.log({ error: "Fetch Error" })
 		}
 	}

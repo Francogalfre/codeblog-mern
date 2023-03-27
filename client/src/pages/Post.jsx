@@ -46,9 +46,9 @@ const PostPage = () => {
 			</h1>
 			<small className='text-[#89929b] flex gap-3'>
 				<time>{format(new Date(postInfo.createdAt), "MMM d, yyyy")}</time>
-				<span className='cursor-pointer'>
+				<Link to={`/profile/${postInfo.author.username}`} className='cursor-pointer'>
 					by @{postInfo.author && postInfo.author.username}
-				</span>
+				</Link>
 			</small>
 			<div
 				className='text-[#89929b]'

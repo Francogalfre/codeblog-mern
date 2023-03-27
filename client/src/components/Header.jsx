@@ -15,7 +15,7 @@ const Header = () => {
 
 	useEffect(() => {
 		try {
-			fetch("http://localhost:4000/profile", {
+			fetch("http://localhost:4000/getprofile", {
 				method: "GET",
 				credentials: "include",
 			}).then((response) => {

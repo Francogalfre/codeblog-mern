@@ -14,6 +14,7 @@ import "./config/database.js"
 // Routes
 import RegisterRouter from "./routes/Register.route.js"
 import LoginRouter from "./routes/Login.route.js"
+import GetProfileRouter from "./routes/GetProfile.route.js"
 import ProfileRouter from "./routes/Profile.route.js"
 import PostRouter from "./routes/Post.route.js"
 
@@ -35,6 +36,9 @@ app.use("/register", RegisterRouter)
 
 // Login
 app.use("/login", LoginRouter)
+
+// Get Profile
+app.use("/getprofile", GetProfileRouter)
 
 // Profile
 app.use("/profile", ProfileRouter)

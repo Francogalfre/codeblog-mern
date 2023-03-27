@@ -1,6 +1,6 @@
 # Codeblog
 
-<span>Welcome to my programming blog! This is a place where everybody can share their thoughts, experiences, and ideas related to programming and code. The blog is built using the MERN stack (MongoDB, Express, React, and Node.js) 🛹<span/>
+<span>Welcome to my programming blog! This is a place where everybody can share their thoughts, experiences, and ideas related to programming and code. The blog is built using the MERN stack 🌌<span/>
 
 ![logo](https://i.imgur.com/sA17skF.png)
 

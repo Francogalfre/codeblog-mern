@@ -1,19 +1,27 @@
 import express from "express"
-import jwt from "jsonwebtoken"
 
 const router = express.Router()
 
-// Secret String
-const secret = "jgsajgsajgqmgsakga123sga"
+// Models
+import { UserModel } from "../models/User.js"
+import { PostModel } from "../models/Post.js"
 
-router.get("/", (req, res) => {
-	const { token } = req.cookies
+router.get("/:username", async (req, res) => {
+	const { username } = req.params
 
-	if (token) {
-		jwt.verify(token, secret, {}, (err, info) => {
-			if (err) throw err
-			res.json(info)
-		})
+	if (username) {
+		const stringUsername = username.toString()
+		const capitalizedUsername =
+			stringUsername.charAt(0).toUpperCase() + stringUsername.slice(1)
+
+		const user = await UserModel.findOne({ username: capitalizedUsername })
+		const { _id } = user
+
+		const posts = await PostModel.find({ author: _id })
+
+		res.json({ posts: posts })
+	} else {
+		res.status(400).json({ error: "Profile Error" })
 	}
 })
 

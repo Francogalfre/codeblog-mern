@@ -10,6 +10,7 @@ import RegisterPage from "../pages/Register"
 import CreatePostPage from "../pages/CreatePost"
 import PostPage from "../pages/Post"
 import EditPostPage from "../pages/EditPost"
+import ProfilePage from "../pages/Profile"
 
 export const router = createBrowserRouter([
 	{
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
 			{
 				path: "post/edit/:id",
 				element: <EditPostPage />,
+			},
+			{
+				path: "profile/:username",
+				element: <ProfilePage />,
 			},
 		],
 	},
