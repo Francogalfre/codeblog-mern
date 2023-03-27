@@ -1,10 +1,6 @@
 <h1>Codeblog</h1>
 
-<<<<<<< HEAD
-<span>Welcome to my programming blog! This is a place where everybody can share their thoughts, experiences, and ideas related to programming and code. The blog is built using the MERN stack 🌌<span/>
-=======
 Welcome to my programming blog! This is a place where everybody can share their thoughts, experiences, and ideas related to programming and code. The blog is built using the MERN stack (MongoDB, Express, React, and Node.js) 🛹
->>>>>>> 4ac6a51b3e9fd4bb1438714e2c86db51ba401c2c
 
 ![logo](https://i.imgur.com/sA17skF.png)
 
