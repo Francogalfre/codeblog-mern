@@ -15,13 +15,13 @@ const Post = ({ _id, cover, title, summary, createdAt, author }) => {
 				/>
 			</Link>
 			<div className='flex flex-col gap-3 lg:gap-2'>
-				<small className='text-blue-300'>Programming</small>
+				<small className='text-blue-300 flex gap-3'>
+					<time>{format(new Date(createdAt), "MMM d, yyyy")} </time>
+					{author && author.username}
+				</small>
 				<div>
 					<h3 className='text-2xl font-bold pb-1 lg:text-2xl text-main-text'>{title}</h3>
-					<small className='text-second-text flex gap-3'>
-						<time>{format(new Date(createdAt), "MMM d, yyyy")}</time>
-						{author && author.username}
-					</small>
+					<small className='text-second-text flex gap-3'></small>
 				</div>
 				<span className='text-sm font-normal lg:text-md text-second-text'>
 					{summary.slice(0, 150) + (summary.length > 40 ? "..." : "")}

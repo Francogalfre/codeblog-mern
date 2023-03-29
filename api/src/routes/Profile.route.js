@@ -21,16 +21,16 @@ router.get("/", (req, res) => {
 router.get("/:username", async (req, res) => {
 	const { username } = req.params
 
-	if (username) {
+	if (username !== undefined) {
 		const stringUsername = username.toString()
 		const capitalizedUsername =
 			stringUsername.charAt(0).toUpperCase() + stringUsername.slice(1)
 
 		const user = await UserModel.findOne({ username: capitalizedUsername })
 
-		const { _id } = user
+		const id = user._id
 
-		const posts = await PostModel.find({ author: _id })
+		const posts = await PostModel.find({ author: id })
 
 		res.json({ posts: posts })
 	} else {

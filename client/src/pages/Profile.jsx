@@ -1,16 +1,13 @@
-import { useParams } from "react-router-dom"
-
 // Components
 import Post from "../components/Post"
 import useGetProfile from "../hooks/useGetProfile"
 
 const ProfilePage = () => {
-	const { username } = useParams()
-	const { posts } = useGetProfile(username)
+	const { posts, username } = useGetProfile()
 
 	return (
 		<div className='h-full'>
-			{username && (
+			{posts ? (
 				<div>
 					<div className='pb-5 flex flex-col gap-3'>
 						<h1 className='text-main-text  text-3xl font-semibold'>{username} Profile</h1>
@@ -30,6 +27,8 @@ const ProfilePage = () => {
 						)}
 					</div>
 				</div>
+			) : (
+				<span>This user does not Exist</span>
 			)}
 		</div>
 	)
