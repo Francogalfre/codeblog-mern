@@ -42,11 +42,9 @@ The blog has the following features:
 
 - **User authentication:** Users can create an account, log in, and log out using JWT tokens.
 - **CRUD operations for blog posts:** Users can create, read, update, and delete posts.
-- **Comments:** Users can leave comments and view comments left by others.
-- **Search functionality:** Users can search for blog posts by title or content.
-- **Pagination:** Users can navigate through multiple pages of blog posts.
 - **View post creator profile:** Users can view all posts created by a specific user.
 - **View individual post:** Users can view each post and its details.
+- **Comments:** Comming Soon...
 
 <br/>
 
