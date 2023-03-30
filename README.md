@@ -50,6 +50,8 @@ The blog has the following features:
 
 <br/>
 
+<img width="80px" align="right" src="https://media1.giphy.com/media/AEzzUX1F0hbz4gORau/giphy.gif?cid=ecf05e47i4h45vjy1xol7adv3lrpp8j5wop6kgtjnkue0yiu&rid=giphy.gif&ct=s" />
+
 <!-- Technology Stack Section -->
 <h3 align="start" >Technology Stack 🎮</h3>
 
