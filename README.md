@@ -55,11 +55,11 @@ The blog has the following features:
 
 The blog was built using the following technologies:
 
-- MongoDB: a NoSQL database for storing blog posts and user data.
-- Express: a backend framework for building APIs.
-- React: a frontend library for building user interfaces.
-- Node.js: a JavaScript runtime for running the backend server.
-- Tailwind: a CSS framework for styling the frontend.
+- **MongoDB:** a NoSQL database for storing blog posts and user data.
+- **Express:** a backend framework for building APIs.
+- **React:** a frontend library for building user interfaces.
+- **Node.js:** a JavaScript runtime for running the backend server.
+- **Tailwind:** a CSS framework for styling the frontend.
 
 <br/>
 
@@ -67,8 +67,6 @@ The blog was built using the following technologies:
 <h3 align="start" >Contributing 🤝🏻</h3>
 
 If you would like to contribute to the blog, please open a pull request with your changes. All contributions are welcome, including bug fixes, new features, and improvements to the existing code.
-
-<br/>
 
 <!-- Author -->
 <h3 align="start" >Authors 👩🏻‍💻</h3>
