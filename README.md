@@ -27,11 +27,26 @@ To run the blog on your local machine, follow these steps:
 4. Run `npm start` to start the development server.
 
 <br/>
+<br/>
 
 <!-- Gallery -->
-<h3 align="start" >Images from the Project 📸</h3>
+<h3 align="center" >Images from the Project 📸</h3>
 
-![logo](https://i.imgur.com/sA17skF.png)
+<img src="https://i.imgur.com/sA17skF.png" align="center" />
+<br/>
+<br/>
+ 
+<img src="https://i.imgur.com/IDcvStV.png" align="center" />
+<br/>
+<br/>
+
+<img src="https://i.imgur.com/F2eeB3O.png" align="center" />
+<br/>
+<br/>
+
+<img src="https://i.imgur.com/xrOC1PC.png" align="center" />
+<br/>
+<br/>
 
 <br/>
 
