@@ -24,7 +24,7 @@ const EditPostForm = () => {
 			className='flex flex-col bg-second-background-color rounded-lg content-center text-start items-start px-12 py-10 gap-6'
 			onSubmit={handleEditPost}
 		>
-			<h1 className='text-main-text text-2xl pb-4'>Create your Post</h1>
+			<h1 className='text-main-text text-2xl pb-4'>Edit your Post</h1>
 
 			<div className='flex flex-col gap-2 w-full'>
 				<label htmlFor='postTitle' className='text-second-text text-md font-medium'>
